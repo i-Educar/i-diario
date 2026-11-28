@@ -1,0 +1,478 @@
+/**
+ * Skins municipais no i-Diário (SmartAdmin).
+ * DOM: #header, #left-panel, #ribbon, #main, .jarviswidget, .page-footer
+ *
+ * Buriti = azul Laguna (#1a5f9e) — sem teal escuro/lama.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* —— Chrome compartilhado —— */
+body.tema-buriti-skin {
+  font-family: var(--fonte, "Manrope", "Segoe UI", sans-serif) !important;
+  background: var(--fundo, #eef3fb) !important;
+  color: var(--tinta, #0f1b2d);
+}
+
+/* Header: altura útil p/ seletor de escola/unidade + botões estilizados */
+body.tema-buriti-skin.smart-style-2 #header,
+body.tema-buriti-skin #header.laguna-skin-header,
+body.tema-buriti-skin #header {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 8px;
+  height: 72px !important;
+  min-height: 72px !important;
+  max-height: none !important;
+  padding: 0 12px 0 8px !important;
+  background: var(--cor, #1a5f9e) !important;
+  background-color: var(--cor, #1a5f9e) !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 3px solid var(--acento, #2a9d8f) !important;
+  box-shadow: 0 4px 14px rgba(15, 27, 45, 0.14) !important;
+  overflow: visible !important;
+}
+/* SmartAdmin força #header > div { height:49px; float:left } — quebra o seletor */
+body.tema-buriti-skin #header > div {
+  display: flex !important;
+  align-items: center !important;
+  float: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  vertical-align: middle !important;
+}
+body.tema-buriti-skin #header #logo-group {
+  flex: 0 0 auto;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.tema-buriti-skin #header #logo-group span#logo,
+body.tema-buriti-skin #header #logo-group img {
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+}
+body.tema-buriti-skin #header #logo-group img {
+  background: #fff !important;
+  border-radius: 8px !important;
+  padding: 2px 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+/* Seletor de perfil / escola (unidade) */
+body.tema-buriti-skin #header #profile-selection {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+body.tema-buriti-skin #header #profile-selection > div {
+  width: 100%;
+}
+body.tema-buriti-skin #header #current-role-selector {
+  margin-top: 0 !important;
+}
+body.tema-buriti-skin #header #user-role-form {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px 6px;
+}
+body.tema-buriti-skin #header #user-role-form > * {
+  float: none !important;
+}
+body.tema-buriti-skin #header .project-context {
+  display: block !important;
+  padding: 0 4px !important;
+  color: #fff !important;
+}
+body.tema-buriti-skin #header .project-context > :first-child,
+body.tema-buriti-skin #header .project-context > span.label,
+body.tema-buriti-skin #header .project-context .label {
+  color: rgba(255, 255, 255, 0.78) !important;
+  text-shadow: none !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px !important;
+}
+body.tema-buriti-skin #header .project-selector,
+body.tema-buriti-skin #header .header-dropdown-list a,
+body.tema-buriti-skin #header .header-search > input[type="text"],
+body.tema-buriti-skin #header #user-info-selector {
+  color: #fff !important;
+}
+body.tema-buriti-skin #header #user-info-selector {
+  margin: 0 8px 0 4px !important;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+body.tema-buriti-skin #header #user-info-selector span {
+  margin-top: 0 !important;
+  color: #fff !important;
+}
+body.tema-buriti-skin #header .multiselect,
+body.tema-buriti-skin #header .multiselect__tags {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: var(--tinta, #0f1b2d) !important;
+  border-radius: 8px !important;
+  min-height: 30px !important;
+}
+body.tema-buriti-skin #header .multiselect__single,
+body.tema-buriti-skin #header .multiselect__placeholder,
+body.tema-buriti-skin #header .multiselect__input {
+  color: var(--tinta, #0f1b2d) !important;
+  margin-bottom: 0 !important;
+}
+body.tema-buriti-skin #header .role-selector {
+  margin-top: 14px !important;
+}
+body.tema-buriti-skin #header .role-selector .btn {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+/* Ações à direita (menu, sino, sair) */
+body.tema-buriti-skin #header > .pull-right {
+  flex: 0 0 auto;
+  margin: 0 0 0 auto !important;
+  gap: 6px;
+}
+body.tema-buriti-skin #header .btn-header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.tema-buriti-skin #header .btn-header > :first-child > a,
+body.tema-buriti-skin #header .btn-header > a,
+body.tema-buriti-skin #header .btn-header a#activity,
+body.tema-buriti-skin #header #hide-menu a,
+body.tema-buriti-skin #header #logout a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  line-height: 1 !important;
+  font-size: 16px !important;
+}
+body.tema-buriti-skin #header .btn-header > :first-child > a:hover,
+body.tema-buriti-skin #header .btn-header > a:hover,
+body.tema-buriti-skin #header .btn-header a#activity:hover,
+body.tema-buriti-skin #header #hide-menu a:hover,
+body.tema-buriti-skin #header #logout a:hover,
+body.tema-buriti-skin #header .btn-header > :first-child > a:focus,
+body.tema-buriti-skin #header .btn-header > a:focus {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #fff !important;
+  cursor: pointer !important;
+}
+body.tema-buriti-skin #header .btn-header a > i,
+body.tema-buriti-skin #header #hide-menu a > i,
+body.tema-buriti-skin #header #logout a > i {
+  color: #fff !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+body.tema-buriti-skin #header .btn-header a#activity {
+  position: relative !important;
+}
+body.tema-buriti-skin #header .btn-header a#activity .badge {
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  background: var(--acento, #2a9d8f) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+body.tema-buriti-skin #header .user-info {
+  margin: 0 0 0 6px !important;
+}
+body.tema-buriti-skin #header .user-info .fa {
+  color: #fff !important;
+  margin-top: 0 !important;
+}
+body.tema-buriti-skin #header .user-info img,
+body.tema-buriti-skin #header .user-info .avatar-35 {
+  margin-top: 0 !important;
+  border-radius: 8px !important;
+}
+/* Alinha conteúdo/menu à nova altura do header Buriti */
+body.tema-buriti-skin.fixed-header #main {
+  margin-top: 72px !important;
+}
+body.tema-buriti-skin aside#left-panel,
+body.tema-buriti-skin #left-panel {
+  padding-top: 72px !important;
+}
+
+/* Lateral: token --nav (nunca misturar --cor com preto) */
+body.tema-buriti-skin aside#left-panel,
+body.tema-buriti-skin #left-panel {
+  background: var(--nav, #144e84) !important;
+  background-image: none !important;
+  border-right: 1px solid color-mix(in srgb, var(--acento, #2a9d8f) 28%, transparent) !important;
+}
+body.tema-buriti-skin #left-panel nav > ul,
+body.tema-buriti-skin #left-panel nav {
+  background: transparent !important;
+}
+body.tema-buriti-skin #left-panel nav ul li a,
+body.tema-buriti-skin nav ul li a {
+  color: color-mix(in srgb, var(--nav-texto, #fff) 88%, transparent) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+body.tema-buriti-skin #left-panel nav ul li a:hover,
+body.tema-buriti-skin #left-panel nav ul li.open > a,
+body.tema-buriti-skin #left-panel nav ul li.active > a {
+  background: color-mix(in srgb, var(--acento, #2a9d8f) 16%, transparent) !important;
+  color: #fff !important;
+  box-shadow: inset 3px 0 0 var(--acento, #2a9d8f) !important;
+}
+body.tema-buriti-skin #left-panel nav ul ul {
+  background: color-mix(in srgb, #000 18%, var(--nav, #144e84)) !important;
+}
+body.tema-buriti-skin .login-info,
+body.tema-buriti-skin .login-info > span,
+body.tema-buriti-skin .login-info a {
+  background: transparent !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--nav-texto, #fff) !important;
+  text-shadow: none !important;
+}
+body.tema-buriti-skin .minifyme {
+  background: color-mix(in srgb, #000 12%, var(--nav, #144e84)) !important;
+  color: var(--nav-texto, #fff) !important;
+  border-color: transparent !important;
+}
+
+/* Conteúdo */
+body.tema-buriti-skin #main {
+  background: var(--fundo) !important;
+}
+body.tema-buriti-skin #ribbon {
+  background: transparent !important;
+  color: var(--suave) !important;
+  border: 0 !important;
+}
+body.tema-buriti-skin #ribbon .breadcrumb,
+body.tema-buriti-skin #ribbon .breadcrumb a,
+body.tema-buriti-skin #ribbon .breadcrumb li {
+  color: var(--suave) !important;
+  background: transparent !important;
+}
+body.tema-buriti-skin .jarviswidget,
+body.tema-buriti-skin .jarviswidget > div {
+  background: var(--superficie, #fff) !important;
+  border: 1px solid var(--linha, #d3dde8) !important;
+  border-radius: var(--raio, 12px) !important;
+  box-shadow: 0 6px 18px rgba(15, 27, 45, 0.05) !important;
+}
+body.tema-buriti-skin .jarviswidget > header {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--clara) 65%, #fff), var(--superficie, #fff)) !important;
+  border-bottom: 1px solid var(--linha) !important;
+  border-radius: var(--raio, 12px) var(--raio, 12px) 0 0 !important;
+  color: var(--tinta) !important;
+}
+body.tema-buriti-skin .jarviswidget > header h2 {
+  color: var(--tinta) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+body.tema-buriti-skin .page-footer {
+  background: color-mix(in srgb, var(--clara) 75%, #fff) !important;
+  border-top: 1px solid var(--linha) !important;
+  color: var(--suave) !important;
+}
+
+/* Ações */
+body.tema-buriti-skin .btn-primary,
+body.tema-buriti-skin .btn-success {
+  background: var(--destaque) !important;
+  border-color: var(--destaque) !important;
+  text-shadow: none !important;
+}
+body.tema-buriti-skin .btn-primary:hover,
+body.tema-buriti-skin .btn-success:hover {
+  filter: brightness(1.06);
+}
+body.tema-buriti-skin a {
+  color: var(--destaque);
+}
+body.tema-buriti-skin #left-panel a {
+  color: inherit;
+}
+
+
+/* Mobile: painel «Alterar perfil» alinhado ao tema */
+@media (max-width: 1365px) {
+  body.tema-buriti-skin #user-info-selector {
+    color: #fff !important;
+  }
+  body.tema-buriti-skin #current-role-selector {
+    background-color: color-mix(in srgb, var(--fundo, #eef3fb) 92%, transparent) !important;
+  }
+  body.tema-buriti-skin #user-role-form {
+    background: var(--cor, #1a5f9e) !important;
+    border: 1px solid color-mix(in srgb, var(--acento, #2a9d8f) 40%, transparent) !important;
+    box-shadow: 0 16px 40px rgba(15, 27, 45, 0.28) !important;
+  }
+}
+
+/* —— Paletas —— */
+body.tema-buriti,
+body.tema-buriti-laguna {
+  --cor: #1a5f9e;
+  --destaque: #2f7ec4;
+  --acento: #2a9d8f;
+  --nav: #144e84;
+  --nav-texto: #f5f9fc;
+  --fundo: #eef3fb;
+  --clara: #e4edf7;
+  --superficie: #ffffff;
+  --tinta: #0f1b2d;
+  --suave: #4a5a6a;
+  --linha: #d3dde8;
+  --fonte: "Manrope", "Segoe UI", sans-serif;
+  --raio: 12px;
+}
+
+body.tema-ebano {
+  --cor: #2a2420;
+  --destaque: #4a3f36;
+  --acento: #c4a574;
+  --nav: #3a322c;
+  --nav-texto: #faf6ef;
+  --fundo: #f7f3ec;
+  --clara: #efe8dc;
+  --superficie: #fffcf7;
+  --tinta: #1f1a16;
+  --suave: #6e6458;
+  --linha: #ddd4c6;
+  --fonte: "Libre Baskerville", Georgia, serif;
+  --raio: 8px;
+}
+body.tema-ebano #header {
+  background: #2a2420 !important;
+  border-bottom-color: #c4a574 !important;
+}
+body.tema-ebano #left-panel {
+  background: #3a322c !important;
+}
+body.tema-ebano #left-panel nav ul li.active > a,
+body.tema-ebano #left-panel nav ul li.open > a {
+  box-shadow: inset 3px 0 0 #c4a574 !important;
+  color: #c4a574 !important;
+}
+
+body.tema-horizonte {
+  --cor: #1e293b;
+  --destaque: #2563eb;
+  --acento: #3b82f6;
+  --nav: #334155;
+  --nav-texto: #f8fafc;
+  --fundo: #f1f5f9;
+  --clara: #e2e8f0;
+  --superficie: #ffffff;
+  --tinta: #0f172a;
+  --suave: #64748b;
+  --linha: #cbd5e1;
+  --fonte: "Manrope", "Segoe UI", sans-serif;
+  --raio: 6px;
+}
+body.tema-horizonte #header {
+  background: #1e293b !important;
+  border-bottom-color: #3b82f6 !important;
+}
+body.tema-horizonte #left-panel {
+  background: #334155 !important;
+}
+
+body.tema-orbita {
+  --cor: #0a0f1c;
+  --destaque: #0f9f8a;
+  --acento: #22d3bb;
+  --nav: #121a2e;
+  --nav-texto: #e8fff9;
+  --fundo: #0b1020;
+  --clara: #151d32;
+  --superficie: #121a2e;
+  --tinta: #e8fff9;
+  --suave: #8aa4b8;
+  --linha: #273352;
+  --fonte: "Manrope", "Segoe UI", sans-serif;
+  --raio: 4px;
+  color-scheme: dark;
+}
+body.tema-orbita #header {
+  background: #0a0f1c !important;
+  border-bottom-color: #22d3bb !important;
+  box-shadow: 0 0 22px rgba(34, 211, 187, 0.16) !important;
+}
+body.tema-orbita #left-panel {
+  background: #121a2e !important;
+  border-right-color: #273352 !important;
+}
+body.tema-orbita #left-panel nav ul li.active > a,
+body.tema-orbita #left-panel nav ul li.open > a {
+  color: #22d3bb !important;
+  box-shadow: inset 3px 0 0 #22d3bb !important;
+  background: rgba(34, 211, 187, 0.08) !important;
+}
+body.tema-orbita .jarviswidget,
+body.tema-orbita .jarviswidget > div {
+  background: #121a2e !important;
+  border-color: #273352 !important;
+  color: #e8fff9 !important;
+  box-shadow: 0 0 0 1px rgba(34, 211, 187, 0.08), 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+}
+body.tema-orbita .jarviswidget > header {
+  background: #151d32 !important;
+  border-bottom-color: #273352 !important;
+  color: #22d3bb !important;
+}
+body.tema-orbita .jarviswidget > header h2 { color: #e8fff9 !important; }
+body.tema-orbita #main { background: #0b1020 !important; }
+body.tema-orbita .page-footer {
+  background: #0a0f1c !important;
+  border-top-color: #273352 !important;
+  color: #8aa4b8 !important;
+}
+body.tema-orbita a { color: #22d3bb; }
+
+body.tema-litoral {
+  --cor: #0e3a55;
+  --destaque: #1a5f7a;
+  --acento: #3d9b8f;
+  --nav: #164a68;
+  --nav-texto: #eef8f5;
+  --fundo: #eef4f2;
+  --clara: #e3ece9;
+  --superficie: #f8fbfa;
+  --tinta: #12202c;
+  --suave: #5a6f78;
+  --linha: #c9d5d1;
+  --fonte: "Manrope", "Segoe UI", sans-serif;
+  --raio: 14px;
+}
+body.tema-litoral #header {
+  background: #0e3a55 !important;
+  border-bottom-color: #3d9b8f !important;
+}
+body.tema-litoral #left-panel {
+  background: #164a68 !important;
+}
+body.tema-litoral #left-panel nav ul li.active > a {
+  box-shadow: inset 3px 0 0 #3d9b8f !important;
+}

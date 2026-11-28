@@ -6,9 +6,10 @@
     <%= render 'layouts/google_tag_manager_head' %>
     <%= render 'layouts/default_headers' %>
     <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+    <%= Laguna::TemaBuriti.stylesheet_tag %>
   </head>
 
-  <body class="smart-style-2 fixed-header <%= controller_name %>">
+  <body class="smart-style-2 fixed-header <%= controller_name %> <%= Laguna::TemaBuriti.body_class %>">
     <%= render 'layouts/google_tag_manager_body' %>
 
     <div id="page-loading" class="hidden">
@@ -16,19 +17,20 @@
       Carregando ...
     </div>
 
-    <header id="header" style="height: 77px; background-color: #27333B;">
-      <div id="logo-group" style="margin-top: 10px; margin-left: 10px;">
+    <% buriti_skin = Laguna::TemaBuriti.ativo? %>
+    <header id="header" class="<%= buriti_skin ? 'laguna-skin-header' : '' %>" style="height: <%= buriti_skin ? '72px' : '77px' %>;<%= buriti_skin ? '' : ' background-color: #27333B;' %>">
+      <div id="logo-group" style="<%= buriti_skin ? '' : 'margin-top: 10px; margin-left: 10px;' %>">
         <%= link_to image_tag(
             logo_url,
-            height: '57px',
+            height: buriti_skin ? '48px' : '57px',
             alt: current_entity_configuration.try(:entity_name),
-            style: 'background-color: white; border-radius: 3px;'
+            style: buriti_skin ? 'background-color: white; border-radius: 8px;' : 'background-color: white; border-radius: 3px;'
           ), root_path %>
       </div>
 
       <%= render "layouts/profile_selection" %>
 
-      <div class="pull-right" style="margin-top: 15px;">
+      <div class="pull-right" style="<%= buriti_skin ? '' : 'margin-top: 15px;' %>">
         <% if user_signed_in? %>
           <div id="hide-menu" class="btn-header pull-right">
             <span>
@@ -78,6 +80,15 @@
     <div class="page-footer">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
+          <span class="txt-color-white">
+            i-Educar 2.12 · i-Diário · <%= Time.zone.today.year %>
+            · Cooperação
+            <a href="https://buriti.dev.br/public/" target="_blank" rel="noopener" class="txt-color-white">Buriti</a>
+            ·
+            <a href="https://librecode.coop/" target="_blank" rel="noopener" class="txt-color-white">LibreCode</a>
+          </span>
+        </div>
+        <div class="col-xs-12 col-sm-6 text-right">
           <span class="txt-color-white"><%= entity_copyright %></span>
         </div>
       </div>
